@@ -16,4 +16,9 @@ export class HeroService {
     this.messageService.add('HeroService: 获取到英雄列表。');
     return of(HEROES);
   }
+
+  getHero(id: number): Observable<Hero> {
+    this.messageService.add(`HeroService: 获取到英雄 id = ${id}`);
+    return of(HEROES.find(value => value.id === id));
+  }
 }
